@@ -1,0 +1,323 @@
+{
+	"info": {
+		"_postman_id": "6e69e959-2b74-4861-bced-99cad81c9911",
+		"name": "Dummy Rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19593253"
+	},
+	"item": [
+		{
+			"name": "1.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/employees",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"success\");",
+							"});",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var response = pm.response.json();",
+							"    pm.expect(response.data.id).to.eql(2);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/employee/2",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "2.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummy.restapiexample.com/api/v1/employee/2",
+							"protocol": "https",
+							"host": [
+								"dummy",
+								"restapiexample",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"employee",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private, max-age=21600"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 04 Aug 2022 09:29:26 GMT"
+						},
+						{
+							"key": "Display",
+							"value": "staticcontent_sol"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 04 Aug 2022 15:29:26 GMT"
+						},
+						{
+							"key": "Host-Header",
+							"value": "c2hhcmVkLmJsdWVob3N0LmNvbQ=="
+						},
+						{
+							"key": "Response",
+							"value": "200"
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding,User-Agent,Origin"
+						},
+						{
+							"key": "X-Endurance-Cache-Level",
+							"value": "2"
+						},
+						{
+							"key": "X-Ezoic-Cdn",
+							"value": "Miss"
+						},
+						{
+							"key": "X-Middleton-Display",
+							"value": "staticcontent_sol"
+						},
+						{
+							"key": "X-Middleton-Response",
+							"value": "200"
+						},
+						{
+							"key": "X-Nginx-Cache",
+							"value": "WordPress"
+						},
+						{
+							"key": "X-Origin-Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "X-Server-Cache",
+							"value": "false"
+						},
+						{
+							"key": "X-Sol",
+							"value": "pub_site"
+						},
+						{
+							"key": "Content-Length",
+							"value": "131"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"id\": 2,\n        \"employee_name\": \"Garrett Winters\",\n        \"employee_salary\": 170750,\n        \"employee_age\": 63,\n        \"profile_image\": \"\"\n    },\n    \"message\": \"Successfully! Record has been fetched.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "3.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"success\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/create",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"success\");",
+							"});",
+							"pm.test(\"Your test name\", function () {",
+							"    var response = pm.response.json();",
+							"    pm.expect(response.data.employee_name).to.eql(\"Tom\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/update/1865/?employee_name=Tom",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"update",
+						"1865",
+						""
+					],
+					"query": [
+						{
+							"key": "employee_name",
+							"value": "Tom"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"success\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/delete/2",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
