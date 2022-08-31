@@ -1,0 +1,1 @@
+This folder contains all POSTMAN/RESTapi projects/collections, done by me (Tom Reba)

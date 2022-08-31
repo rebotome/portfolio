@@ -1,0 +1,1 @@
+This folder contains all SQL database queries projects, done by me (Tom Reba)

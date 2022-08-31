@@ -1,0 +1,1 @@
+This folder contains all FRONTEND projects, done by me (Tom Reba)
