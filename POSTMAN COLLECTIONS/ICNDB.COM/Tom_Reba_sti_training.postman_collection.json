@@ -1,0 +1,410 @@
+{
+	"info": {
+		"_postman_id": "1e987209-5533-452c-8381-a1e2ff71840b",
+		"name": "Tom_Reba_sti_training",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Full list of Chuk Norris jokes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Chuck Norris\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.icndb.com/jokes",
+					"protocol": "http",
+					"host": [
+						"api",
+						"icndb",
+						"com"
+					],
+					"path": [
+						"jokes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Count available jokes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"574\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.icndb.com/jokes/count",
+					"protocol": "http",
+					"host": [
+						"api",
+						"icndb",
+						"com"
+					],
+					"path": [
+						"jokes",
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Receive a specific joke by its id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"14\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.icndb.com/jokes/14",
+					"protocol": "http",
+					"host": [
+						"api",
+						"icndb",
+						"com"
+					],
+					"path": [
+						"jokes",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Receive a specific joke with changed firstName and lastName",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"14\");",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Tom Reba\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.icndb.com/jokes/14?firstName=Tom&lastName=Reba",
+					"protocol": "http",
+					"host": [
+						"api",
+						"icndb",
+						"com"
+					],
+					"path": [
+						"jokes",
+						"14"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Tom"
+						},
+						{
+							"key": "lastName",
+							"value": "Reba"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Receive a random joke with changed firstName and lastName Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Tom Reba\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.icndb.com/jokes/random?firstName=Tom&lastName=Reba",
+					"protocol": "http",
+					"host": [
+						"api",
+						"icndb",
+						"com"
+					],
+					"path": [
+						"jokes",
+						"random"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Tom"
+						},
+						{
+							"key": "lastName",
+							"value": "Reba"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Receive a list of categories available",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"explicit\", \"nerdy\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.icndb.com/categories",
+					"protocol": "http",
+					"host": [
+						"api",
+						"icndb",
+						"com"
+					],
+					"path": [
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Receive all jokes of specific category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"nerdy\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.icndb.com/jokes/?limitTo=[nerdy]",
+					"protocol": "http",
+					"host": [
+						"api",
+						"icndb",
+						"com"
+					],
+					"path": [
+						"jokes",
+						""
+					],
+					"query": [
+						{
+							"key": "limitTo",
+							"value": "[nerdy]"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8. Receive all jokes with one category excluded",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.not.include(\"nerdy\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.icndb.com/jokes/?exclude=[nerdy]",
+					"protocol": "http",
+					"host": [
+						"api",
+						"icndb",
+						"com"
+					],
+					"path": [
+						"jokes",
+						""
+					],
+					"query": [
+						{
+							"key": "exclude",
+							"value": "[nerdy]"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9. Receive any random joke",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"success\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.icndb.com/jokes/random",
+					"protocol": "http",
+					"host": [
+						"api",
+						"icndb",
+						"com"
+					],
+					"path": [
+						"jokes",
+						"random"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10. Receive a specific number of random jokes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.icndb.com/jokes/random/3",
+					"protocol": "http",
+					"host": [
+						"api",
+						"icndb",
+						"com"
+					],
+					"path": [
+						"jokes",
+						"random",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
